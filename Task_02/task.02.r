@@ -72,3 +72,13 @@ plot(as.numeric(names(DailyNapTime)), DailyNapTime, type="b", pch=16, xlab="age 
 dev.off()
 DailyNapCor <- cor.test(StartTime, DataNap$nap_length_in_hours)
 #The relationship between the nap starting time and total duration is a slightly negative corralation. The earlier it is in the day, the longer the nap generally tends to be, and vice versa.
+
+#hypothesis- The amount of solid food that Beren eats at daycare has a negative corralation with the amount of milk drunk at daycare.
+
+Solids <- which(Data3$event == "solids")
+totalSolids <- tapply(Data3$value[Solids], Data3$age[Solids], sum)
+totalFeed -c(126:193, 198:200, 204:207, 212:213, 218:228, 232:234, 240:242, 246:262, 268:269)
+pdf("r02c-SolidsVsBottle.pdf", height = 4, width = 4)
+plot(as.numeric(names(totalSolids)), totalSolids, type="b", pch=16, xlab="age in days", ylab="Daily sum of solids eaten at daycare on a scale from 1 to 3 per meal black       Daily sum of milk drunk in ounces while at daycare (red)")
+lines(as.numeric(names(totalFeed)), totalFeed, type="b", col="red")
+dev.off()
