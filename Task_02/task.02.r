@@ -73,7 +73,7 @@ dev.off()
 DailyNapCor <- cor.test(StartTime, DataNap$nap_length_in_hours)
 #The relationship between the nap starting time and total duration is a slightly negative corralation. The earlier it is in the day, the longer the nap generally tends to be, and vice versa.
 
-#hypothesis- The amount of solid food that Beren eats at daycare has a negative corralation with the amount of milk drunk at daycare.
+#hypothesis- The amount of solid food that Beren eats at daycare has a negative corralation with the amount of milk in ounces drunk at daycare.
 
 Solids <- which(Data3$event == "solids")
 totalSolids <- tapply(Data3$value[Solids], Data3$age[Solids], sum)
